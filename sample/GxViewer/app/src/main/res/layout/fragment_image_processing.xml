@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Switch
+            android:id="@+id/color_correct_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ColorCorrect"
+            tools:layout_editor_absoluteX="45dp"
+            tools:layout_editor_absoluteY="309dp" />
+
+        <View
+            android:id="@+id/divider14"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="?android:attr/listDivider" />
+
+        <Switch
+            android:id="@+id/gamma_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gamma"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="36dp" />
+
+        <gxviewer.SeekBarValue
+            android:id="@+id/gamma_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="365dp" />
+
+        <View
+            android:id="@+id/divider15"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="?android:attr/listDivider" />
+
+        <Switch
+            android:id="@+id/contrast_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contrast"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="78dp" />
+
+        <gxviewer.SeekBarValue
+            android:id="@+id/contrast_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            app:layout_constraintLeft_toLeftOf="@+id/gamma_value"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_editor_absoluteY="78dp" />
+
+        <View
+            android:id="@+id/divider16"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="?android:attr/listDivider" />
+
+        <Switch
+            android:id="@+id/mirror_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mirror"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/mirror_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mirror_switch" />
+    </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

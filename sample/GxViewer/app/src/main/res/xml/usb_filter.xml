@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 0x2ba2 / 0x4d55: Daheng USB3 Camera -->
+    <usb-device vendor-id="11170" product-id="19797" />
+</resources>

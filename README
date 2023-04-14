@@ -1,0 +1,55 @@
+System Requirements
+===================
+Android 6.0 or above
+
+SDK Folder List
+===================
+.
+├── app
+│   ├── GxViewer_GetBitmap.apk
+│   ├── GxViewer_GetImageBySurface.apk
+│   └── GxViewer_GetRawImage.apk
+├── doc_cn
+│   ├── Android版SDK常见问题解答.pdf
+│   ├── Android示例程序使用说明书.pdf
+│   └── Java接口开发说明书.pdf
+├── doc_en
+│   ├── Android Sample Program User Manual.pdf
+│   ├── Android SDK FAQ.pdf
+│   └── Java Interface Development User Manual.pdf
+├── lib
+│   ├── galaxy-android-javadoc
+│   ├── galaxy-android-jniLibs
+│   └── galaxy-android-source
+├── README
+└── sample
+    └── GxViewer
+
+app
+--------
+1. There are three versions of the APK installation package: GxViewer_GetBitmap, GxViewer_GetRawImage, GxViewer_GetImageBySurface.
+2. The UI and function of the three Apk are similar, The difference is format of saved image:
+        1) GxViewer_GetBitmap save JPEG file;
+        2) GxViewer_GetRawImage save JPEG file;
+        3) GxViewer_GetImageBySurface  save RAW file.
+3. The image saved by the application is located in the Pictures directory, JPEG format images can be viewed through Gallery, RAW format images cannot be viewed through Gallery.
+
+Note: Only one of the three versions of Apk can be installed on the same device in the same time.
+
+doc_cn
+--------
+Chinese version document
+
+doc_en
+--------
+English version document
+
+lib
+--------
+1. galaxy-android-javasource directory contains jar package of Android SDK Library.
+2. galaxy-android-jniLibs directory contains share object(so) files.
+3. galaxy-android-doc directory contains Javadoc in jar format for Android SDK Library.
+
+sample
+--------
+There is source code of sample app.

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">GxViewer</string>
+    <string-array name="trigger_mode">
+        <item>continuous</item>
+        <item>soft triger</item>
+    </string-array>
+    <string-array name="off_on">
+        <item>Off</item>
+        <item>On</item>
+    </string-array>
+    <string-array name="white_balance_mode">
+        <item>Off</item>
+        <item>Once</item>
+        <item>continuous</item>
+    </string-array>
+    <string-array name="data_set">
+        <item>Default</item>
+        <item>UserSet0</item>
+    </string-array>
+
+    <string name="app_version">1.0.2112.9201</string>
+</resources>

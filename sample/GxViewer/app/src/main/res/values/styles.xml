@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <declare-styleable name="WordWrapView">
+        <attr name="padding_horizontal" format="dimension"/>
+        <attr name="padding_vertical" format="dimension"/>
+        <attr name="margin_horizontal" format="dimension"/>
+        <attr name="margin_vertical" format="dimension"/>
+    </declare-styleable>
+
+</resources>

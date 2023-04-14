@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SeekBarValue">
+    <attr name="enabled" format="boolean" />
+    <attr name="max_value" format="reference|float" />
+    <attr name="min_value" format="reference|float" />
+    <attr name="value" format="reference|float" />
+    <attr name="precision" format="reference|integer" />
+</declare-styleable>
+</resources>

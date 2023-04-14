@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/trigger_mode_item"
+        android:enabled="true"
+        android:title="TriggerMode"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/exposure_gain_item"
+        android:enabled="true"
+        android:title="Exposure&amp;Gain"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/white_balance_item"
+        android:enabled="true"
+        android:title="WhiteBalance"
+        app:showAsAction="ifRoom"/>
+</menu>
