@@ -1,6 +1,7 @@
 package gxviewer;
 
 import android.Manifest;
+import android.app.FragmentManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +19,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.ActionBar;
@@ -45,8 +45,9 @@ import galaxy.RawImage;
 
 
 public class MainActivity extends AppCompatActivity implements SlidingPaneLayout.PanelSlideListener
-, SurfaceHolder.Callback
-, View.OnClickListener, DeviceManager.OnUpdateDeviceListFinishedListener {
+        , SurfaceHolder.Callback
+        , View.OnClickListener, DeviceManager.OnUpdateDeviceListFinishedListener
+        , FragmentManager.OnBackStackChangedListener, android.support.v4.app.FragmentManager.OnBackStackChangedListener {
 
     private SettingListFragment m_settingFragment;            ///< setting list fragment
     private SlidingPaneLayout m_slidingPaneLayout;            ///< main view layout
@@ -93,6 +94,13 @@ public class MainActivity extends AppCompatActivity implements SlidingPaneLayout
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     0);
         }
+
+        getSupportFragmentManager().addOnBackStackChangedListener(this);
+        if (savedInstanceState == null)
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment, new gxviewer.DevicesFragment(), "devices").commit();
+        else
+            onBackStackChanged();
+
 
     }
 
@@ -760,6 +768,8 @@ public class MainActivity extends AppCompatActivity implements SlidingPaneLayout
         registerReceiver(m_usbBroadcastReceiver, usbDeviceStateFilter);
     }
 
+    void setUSB(){};
+
     /**
      * brief replace fragment to setting frame layout
      * param fragment[in]    fragment to replace current fragment
@@ -771,7 +781,7 @@ public class MainActivity extends AppCompatActivity implements SlidingPaneLayout
             return;
         }
 
-        FragmentManager fm = getSupportFragmentManager();
+        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         if(fm != null) {
             FragmentTransaction transaction = fm.beginTransaction();
             transaction.replace(id, fragment);
@@ -785,7 +795,7 @@ public class MainActivity extends AppCompatActivity implements SlidingPaneLayout
             return;
         }
 
-        FragmentManager fm = getSupportFragmentManager();
+        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         if(fm != null) {
             FragmentTransaction transaction = fm.beginTransaction();
             transaction.replace(id, fragment, tag);
@@ -828,7 +838,7 @@ public class MainActivity extends AppCompatActivity implements SlidingPaneLayout
 
         } else {
 
-            FragmentManager fm = getSupportFragmentManager();
+            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fm.beginTransaction();
             fragmentTransaction.show(m_settingFragment);
             fragmentTransaction.commit();
@@ -847,7 +857,7 @@ public class MainActivity extends AppCompatActivity implements SlidingPaneLayout
         }
 
         m_settingFragment.clearFragment();
-        FragmentManager fm = getSupportFragmentManager();
+        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.hide(m_settingFragment);
         fragmentTransaction.commit();
@@ -920,6 +930,16 @@ public class MainActivity extends AppCompatActivity implements SlidingPaneLayout
         states[4] = new int[] { android.R.attr.state_window_focused };
         states[5] = new int[] {};
         return new ColorStateList(states, colors);
+    }
+
+    @Override
+    public void onBackStackChanged() {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 
 

@@ -19,4 +19,8 @@
     </string-array>
 
     <string name="app_version">1.0.2112.9201</string>
+
+
+    <string name="app_title">USB Serial For Android Example</string>
+    <string name="devices">USB Devices</string>
 </resources>

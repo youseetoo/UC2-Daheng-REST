@@ -164,6 +164,12 @@
 
                 </LinearLayout>
 
+                <RelativeLayout
+                    android:id="@+id/fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
 
                 <!-- This is the lens for X in right! -->
 
